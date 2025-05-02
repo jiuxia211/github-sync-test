@@ -11,7 +11,6 @@
               # 这个token只能用于专有的测试仓库
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
-              force: true
     branch.delete:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
