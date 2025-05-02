@@ -1,5 +1,4 @@
-  # 对所有分支
-  $:
+  main:
     push:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
