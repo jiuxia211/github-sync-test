@@ -11,19 +11,7 @@
               # 这个token只能用于专有的测试仓库
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
-    branch.delete:
-      - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
-        stages:
-          - name: 同步到github(delete branch)
-            image: tencentcom/git-sync
-            settings:
-              target_url: $GITHUB_REPO_URL
-              auth_type: https
-              username: $GITHUB_USERNAME
-              # 这个token只能用于专有的测试仓库
-              password: $GITHUB_ACCESS_TOKEN
-              push_tags: true
-    # 对所有tag生效
+  $:
     tag_push:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
@@ -36,7 +24,6 @@
               # 这个token只能用于专有的测试仓库
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
-    # 文档怪怪的
     tag_deploy.*:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
