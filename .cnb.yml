@@ -1,4 +1,4 @@
-  # 对所有分支
+  # 对所有分支和所有tag
   $:
     push:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
@@ -25,10 +25,9 @@
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
     # 对所有tag生效
-    $:
-      tag_push:
-        - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
-          stages:
+    tag_push:
+      - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
+        stages:
           - name: 同步到github(tag push)
             image: tencentcom/git-sync
             settings:
