@@ -11,11 +11,11 @@
               # 这个token只能用于专有的测试仓库
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
-  $:
-    tag_push:
+  dev:
+    push:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
-          - name: 同步到github(tag push)
+          - name: 同步到github(push)
             image: tencentcom/git-sync
             settings:
               target_url: $GITHUB_REPO_URL
@@ -24,10 +24,12 @@
               # 这个token只能用于专有的测试仓库
               password: $GITHUB_ACCESS_TOKEN
               push_tags: true
-    tag_deploy.*:
+  # 对所有tag生效
+  $:
+    tag_push:
       - imports: https://cnb.cool/1024hub/Demo/jiuxia211-key-test/-/blob/main/envs.yml
         stages:
-          - name: 同步到github(tag deploy)
+          - name: 同步到github(tag push)
             image: tencentcom/git-sync
             settings:
               target_url: $GITHUB_REPO_URL
